@@ -6,10 +6,17 @@ public class Problem1
     public static void main(String[] args)
     {
         System.out.println("Hello world.");
+        int sum = sumOfMultiplesOf3Or5(1000);
+        System.out.println(sum);
+
+    }
+
+    private static int sumOfMultiplesOf3Or5(int limit)
+    {
         int sum = 0;
         int sum3 = 0;
         int sum5 = 0;
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < limit; i++)
         {
             if (i % 3 == 0)
             {
@@ -24,7 +31,6 @@ public class Problem1
             }
         }
         sum = sum3 + sum5;
-        System.out.println(sum);
-
+        return sum;
     }
 }

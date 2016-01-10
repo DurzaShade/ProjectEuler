@@ -1,6 +1,10 @@
 package euler;
 
-public class Problem2 {
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Problem2Test {
 
 	/**
 	 * Even Fibonacci numbers
@@ -16,33 +20,14 @@ public class Problem2 {
 	 * exceed four million, find the sum of the even-valued terms.
 	 * 
 	 * Answer: 4613732
+	 * 
 	 * @param args
 	 */
 
-	public static void main(String[] args) {
-		System.out.println("Hello world.");
-		int sum = sumOfEvenFibonacciNos(4000000);
-		System.out.println(sum);
-
-	}
-
-	static int sumOfEvenFibonacciNos(int limit) {
-		int a = 0;
-		int b = 1;
-		int c;
-		int sumf = 0;
-		for (int i = 0; i < limit; i++) {
-			c = a + b;
-			a = b;
-			b = c;
-			if (c % 2 == 0) {
-				sumf = sumf + c;
-			}
-			if (c > limit) {
-				break;
-			}
-		}
-		return sumf;
+	@Test
+	public void test() {
+		int sum = Problem2.sumOfEvenFibonacciNos(4000000);
+		assertEquals("sum does not match", 4613732, sum);
 	}
 
 }
